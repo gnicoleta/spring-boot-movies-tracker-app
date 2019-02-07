@@ -19,4 +19,10 @@ public class MovieService implements IMovieService {
         List<Movie> movies = (List<Movie>) movieRepository.findAll();
         return movies;
     }
+    @Override
+    public Movie getMovieByTitle(String title) {
+
+        Movie movie = (Movie) movieRepository.findByTitle(title);
+        return movie;
+    }
 }

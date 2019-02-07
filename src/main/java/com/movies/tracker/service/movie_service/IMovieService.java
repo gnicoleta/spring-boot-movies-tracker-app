@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface IMovieService {
     public List<Movie> getAllMovies();
+    public Movie getMovieByTitle(String title);
 }
