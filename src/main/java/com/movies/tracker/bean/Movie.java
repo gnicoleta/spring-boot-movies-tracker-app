@@ -2,10 +2,7 @@ package com.movies.tracker.bean;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -21,13 +18,19 @@ public class Movie {
     private String genre;
     private String description;
 
+    @ManyToOne(cascade = {CascadeType.ALL})
+    //@JoinColumn(name="assigned_to")
+    private User assignedToUser;
+
     public Movie() {
 
     }
 
-    public Movie(String title, String genre, String description) {
+    public Movie(String title, String genre, String description, String username) {
         this.title = title;
         this.genre = genre;
         this.description = description;
+
+        this.assignedToUser = new User(username);
     }
 }

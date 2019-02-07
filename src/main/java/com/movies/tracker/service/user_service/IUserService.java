@@ -1,4 +1,11 @@
 package com.movies.tracker.service.user_service;
 
-public class IUserService {
+import com.movies.tracker.bean.Movie;
+import com.movies.tracker.bean.User;
+
+import java.util.List;
+
+public interface IUserService {
+
+    public List<User> getAllUsers();
 }

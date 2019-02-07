@@ -1,4 +1,4 @@
-package com.movies.tracker.service;
+package com.movies.tracker.service.movie_service;
 
 import com.movies.tracker.bean.Movie;
 import com.movies.tracker.repository.MovieRepository;
@@ -24,5 +24,11 @@ public class MovieService implements IMovieService {
 
         Movie movie = (Movie) movieRepository.findByTitle(title);
         return movie;
+    }
+
+    @Override
+    public List<Movie> getMoviesAssignedToUser(String username) {
+        List<Movie> movies = (List<Movie>) movieRepository.findByAssignedToUser(username);
+        return movies;
     }
 }
