@@ -20,4 +20,5 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
     @Query("select m.id, m.title, um.id, um.username from Movie m join m.users um " +
             "group by m.id, m.title, um.id, um.username having um.username like %?1")
     public List<Movie> findMoviesByUsers(String username);
+
 }

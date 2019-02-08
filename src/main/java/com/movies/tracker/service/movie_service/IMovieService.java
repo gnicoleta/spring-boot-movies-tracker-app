@@ -11,4 +11,6 @@ public interface IMovieService {
     public Movie getMovieByTitle(String title);
 
     public List<Movie> getMoviesAssignedToUser(String username);
+
+    //public List<Movie> getMoviesActors(String username);
 }

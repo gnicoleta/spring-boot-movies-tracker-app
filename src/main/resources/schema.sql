@@ -1,0 +1,7 @@
+create schema tracker;
+
+CREATE TABLE movies(id INT PRIMARY KEY AUTO_INCREMENT,description VARCHAR(100), genre VARCHAR(100), title VARCHAR(100));
+
+CREATE TABLE users(id INT PRIMARY KEY AUTO_INCREMENT,username VARCHAR(100), status INT);
+CREATE TABLE actors(id INT PRIMARY KEY AUTO_INCREMENT,first_name VARCHAR(100),last_name VARCHAR(100), age INT);
+

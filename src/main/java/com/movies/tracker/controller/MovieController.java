@@ -22,7 +22,7 @@ public class MovieController {
         //return topicService.getTopics();
         return movieService.getAllMovies();
     }
-
+/*
     //so id is the token that will get its value from the url
     @RequestMapping("/movies/{title}")
     //that PathVariable annotation get the value from the id token (and its value given in the url)
@@ -32,7 +32,7 @@ public class MovieController {
         return movieService.getMovieByTitle(title);
     }
 
-
+*/
     @RequestMapping("/users/{username}")
     public List<Movie> getMoviesByAssignedToUser(@PathVariable String username) {
         return movieService.getMoviesAssignedToUser(username);
