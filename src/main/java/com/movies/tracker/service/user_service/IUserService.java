@@ -8,4 +8,8 @@ import java.util.List;
 public interface IUserService {
 
     public List<User> getAllUsers();
+
+    public List<User> getActiveUsers();
+
+    //public List<Movie> getUserMovies(String username);
 }

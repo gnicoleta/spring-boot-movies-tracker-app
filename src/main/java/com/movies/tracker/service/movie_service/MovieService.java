@@ -1,6 +1,7 @@
 package com.movies.tracker.service.movie_service;
 
 import com.movies.tracker.bean.Movie;
+import com.movies.tracker.bean.User;
 import com.movies.tracker.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,8 @@ public class MovieService implements IMovieService {
 
     @Override
     public List<Movie> getMoviesAssignedToUser(String username) {
-        List<Movie> movies = (List<Movie>) movieRepository.findByAssignedToUser(username);
+        List<Movie> movies = (List<Movie>) movieRepository.findMoviesByUsers(username);
         return movies;
     }
+
 }

@@ -32,8 +32,10 @@ public class MovieController {
         return movieService.getMovieByTitle(title);
     }
 
+
     @RequestMapping("/users/{username}")
     public List<Movie> getMoviesByAssignedToUser(@PathVariable String username) {
         return movieService.getMoviesAssignedToUser(username);
     }
+
 }

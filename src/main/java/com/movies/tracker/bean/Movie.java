@@ -3,6 +3,8 @@ package com.movies.tracker.bean;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,19 +20,25 @@ public class Movie {
     private String genre;
     private String description;
 
+    /*
     @ManyToOne(cascade = {CascadeType.ALL})
     //@JoinColumn(name="assigned_to")
     private User assignedToUser;
+*/
+
+    @ManyToMany(mappedBy = "movies")
+    private List<User> users = new ArrayList<>();
 
     public Movie() {
 
     }
 
-    public Movie(String title, String genre, String description, String username) {
+    public Movie(String title, String genre, String description) {
         this.title = title;
         this.genre = genre;
         this.description = description;
 
-        this.assignedToUser = new User(username);
+        //this.assignedToUser = new User(username);
     }
+
 }

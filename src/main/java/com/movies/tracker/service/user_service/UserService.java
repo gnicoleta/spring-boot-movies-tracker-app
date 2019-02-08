@@ -18,4 +18,17 @@ public class UserService implements IUserService{
         List<User> users = (List<User>) userRepository.findAll();
         return users;
     }
+
+    @Override
+    public List<User> getActiveUsers() {
+        List<User> users = (List<User>) userRepository.findActiveUsers();
+        return users;
+    }
+/*
+    @Override
+    public List<Movie> getUserMovies(String username) {
+        List<Movie> movies = (List<Movie>) userRepository.findMoviesByUsers(username);
+        return movies;
+    }
+*/
 }
